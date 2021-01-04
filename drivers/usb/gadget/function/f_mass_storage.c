@@ -2274,6 +2274,7 @@ static int fsg_set_alt(struct usb_function *f, unsigned intf, unsigned alt)
 {
 	struct fsg_dev *fsg = fsg_from_func(f);
 <<<<<<< HEAD
+<<<<<<< HEAD
 	struct fsg_common *common = fsg->common;
 	int rc;
 
@@ -2306,6 +2307,10 @@ static int fsg_set_alt(struct usb_function *f, unsigned intf, unsigned alt)
 
 	__raise_exception(fsg->common, FSG_STATE_CONFIG_CHANGE, fsg);
 >>>>>>> c946f1306aaf (usb: gadget: mass_storage: Fix races between fsg_disable and fsg_set_alt)
+=======
+
+	__raise_exception(fsg->common, FSG_STATE_CONFIG_CHANGE, fsg);
+>>>>>>> v4.14.142
 	return USB_GADGET_DELAYED_STATUS;
 
 reset_bulk_int:
@@ -2320,6 +2325,7 @@ static void fsg_disable(struct usb_function *f)
 {
 	struct fsg_dev *fsg = fsg_from_func(f);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 	/* Disable the endpoints */
 	if (fsg->bulk_in_enabled) {
@@ -2338,6 +2344,9 @@ static void fsg_disable(struct usb_function *f)
 =======
 	__raise_exception(fsg->common, FSG_STATE_CONFIG_CHANGE, NULL);
 >>>>>>> c946f1306aaf (usb: gadget: mass_storage: Fix races between fsg_disable and fsg_set_alt)
+=======
+	__raise_exception(fsg->common, FSG_STATE_CONFIG_CHANGE, NULL);
+>>>>>>> v4.14.142
 }
 
 
